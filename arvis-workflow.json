@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jopemachine/arvis-extension-validator/master/workflow-schema.json",
+  "category": "Productivity",
+  "creator": "mblode",
+  "description": "Trello for arvis",
+  "name": "arvis-trello",
+  "readme": "",
+  "defaultIcon": "icon.png",
+  "version": "0.0.2",
+  "webAddress": "https://github.com/jopemachine/arvis-trello#readme",
+  "enabled": true,
+  "variables": {
+    "board": "",
+    "key": "",
+    "list": "",
+    "token": "",
+    "user": ""
+  },
+  "commands": [
+    {
+      "type": "scriptFilter",
+      "command": "tc",
+      "title": "Trello",
+      "subtitle": "",
+      "scriptFilter": "node src/add.js \"{query}\"",
+      "runningSubtext": "Searching...",
+      "withspace": true,
+      "argType": "required",
+      "actions": [
+        {
+          "modifiers": "normal",
+          "type": "script",
+          "script": "node src/post.js \"{query}\""
+        }
+      ]
+    },
+    {
+      "type": "scriptFilter",
+      "command": "t",
+      "title": "Trello",
+      "subtitle": "",
+      "scriptFilter": "node src/board.js \"{query}\"",
+      "runningSubtext": "Searching...",
+      "withspace": true,
+      "argType": "required",
+      "actions": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        }
+      ]
+    },
+    {
+      "type": "scriptFilter",
+      "command": "tt",
+      "title": "Trello",
+      "subtitle": "",
+      "scriptFilter": "node src/tasks.js \"{query}\"",
+      "runningSubtext": "Searching...",
+      "withspace": false,
+      "argType": "optional",
+      "actions": [
+        {
+          "modifiers": "normal",
+          "type": "open",
+          "target": "{query}"
+        }
+      ]
+    }
+  ]
+}

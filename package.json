@@ -1,0 +1,42 @@
+{
+  "name": "arvis-trello",
+  "version": "0.0.2",
+  "description": "Trello for arvis",
+  "license": "MIT",
+  "repository": "mblode/arvis-trello",
+  "author": {
+    "name": "mblode",
+    "email": "m@blode.co",
+    "url": "https://matthewblode.com/"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava",
+    "postinstall": "arvish-init",
+    "preuninstall": "arvish-cleanup"
+  },
+  "files": [
+    "src/board.js",
+    "src/add.js",
+    "src/post.js",
+    "src/tasks.js",
+    "icon.png",
+    "arvis-workflow.json"
+  ],
+  "keywords": [
+    "arvis",
+    "workflow",
+    "arvish"
+  ],
+  "dependencies": {
+    "arvish": ">=0.4.6",
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "xo": "^0.25.3"
+  }
+}
